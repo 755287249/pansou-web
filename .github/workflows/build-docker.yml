@@ -6,6 +6,7 @@ on:
     tags: [ 'v*' ]
   pull_request:
     branches: [ main ]
+  workflow_dispatch:
 
 env:
   REGISTRY: ghcr.io
@@ -27,7 +28,7 @@ jobs:
     - name: Checkout backend repository
       uses: actions/checkout@v4
       with:
-        repository: fish2018/pansou
+        repository: 755287249/pansou-gying
         path: backend
         # 如果后端仓库是私有的，需要配置token
         # token: ${{ secrets.BACKEND_REPO_TOKEN }}
@@ -42,7 +43,7 @@ jobs:
     - name: Set up Go
       uses: actions/setup-go@v4
       with:
-        go-version: '1.21'
+        go-version: '1.24.9'
         cache-dependency-path: backend/go.sum
 
     - name: Install frontend dependencies
