@@ -1,6 +1,6 @@
 services:
   pansou:
-    image: ghcr.io/755287249/pansou-web:latest
+    image: ghcr.io/755287249/pansou-web-tmdb:latest
     container_name: pansou-app
     restart: unless-stopped
     ports:
